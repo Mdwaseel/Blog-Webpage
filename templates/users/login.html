@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <div class="messages mt-4 w-[30%] justify-center m-auto">
+        {% for message in messages %}
+            <div class="bg-blue-500 text-white p-3 rounded mb-2">
+                {{ message }}
+                <button class="ml-2 py-1 px-2 bg-red-500 rounded" onclick="this.parentElement.style.display='none'">
+                    Close
+                </button>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="w-[20%] bg-gray-700 m-auto mt-[10vw] text-white rounded p-4 flex justify-center">
+        
+        <form method="post" action="{% url 'login' %}" class="center" >
+            <h3 class="text-[20px] text-center mb-3 ">Login</h3>
+            <hr>
+            {% csrf_token %}
+            {{form}}
+            <!-- <label for="Username" >Enter Your Username:-</label>
+            {{ form.username }} <br>
+            <label for="Username" >Enter Your Password:-</label>
+            {{ form.password1 }} <br>
+            <label for="Username" >Conform Your Password:-</label>
+            {{ form.password2 }} <br>
+            <br> -->
+                <button type="submit" class="bg-blue-500 text-white px-3 py-2 rounded mx-auto mt-4 text-center" >Login</button>
+        </form>
+        </form>
+
+    </div>
+</body>
+</html>
