@@ -11,22 +11,67 @@ from django.views.generic import DetailView
 
 
 def home(request):
-     form = PostModelForm
-     if request.method == 'POST':
-         form = PostModelForm(request.POST)
-         if form.is_valid():
-             instance = form.save(commit=False)
-             instance.author = request.user
-             instance.save()
-     else: 
-         form = PostModelForm()
-         
+     tech = Post.objects.filter(category='Technology').order_by('-date_uploaded')
+     edu = Post.objects.filter(category='Education').order_by('-date_uploaded')
+     life = Post.objects.filter(category='Lifestyle').order_by('-date_uploaded')
+     finance = Post.objects.filter(category='Finance').order_by('-date_uploaded')
+    
      content = {
-          'posts':Post.objects.all(),
-            'form': form
+          'tech':tech,
+          'edu':edu,
+          'life':life,
+          'finance':finance,
+            
 
      }
      return render(request,'blog/home.html',content)
+
+
+def blog_category(request):
+    # Your view logic goes here
+    return render(request, 'blog/category.html')
+
+def tech(request):
+    # Your view logic goes here
+    return render(request, 'blog/catogery/tech.html')
+
+def science(request):
+    # Your view logic goes here
+    return render(request, 'blog/catogery/science.html')
+
+def parent(request):
+    # Your view logic goes here
+    return render(request, 'blog/catogery/parent.html')
+
+def life(request):
+    # Your view logic goes here
+    return render(request, 'blog/catogery/life.html')
+
+def finance(request):
+    # Your view logic goes here
+    return render(request, 'blog/catogery/finance.html')
+
+def entru(request):
+    # Your view logic goes here
+    return render(request, 'blog/catogery/entru.html')
+
+def edu(request):
+    # Your view logic goes here
+    return render(request, 'blog/catogery/edu.html')
+
+def cook(request):
+    # Your view logic goes here
+    return render(request, 'blog/catogery/cook.html')
+
+def art(request):
+    # Your view logic goes here
+    return render(request, 'blog/catogery/art.html')
+
+def movie(request):
+    # Your view logic goes here
+    return render(request, 'blog/catogery/reviews.html')
+
+
 
 @login_required
 def myblogs(request):

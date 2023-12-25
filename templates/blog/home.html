@@ -1,217 +1,481 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        .container {
-
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            column-gap: 18px;
-        }
-
-        .container .box {
-            margin-top: 10px;
-        }
-
-        .photos {
-            display: grid;
-            width: 80%;
-            margin: auto;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            gap: 8px;
-        }
-
-        .img {
-            border: 2px solid black;
-            width: 100%;
-            height: 200px;
-        }
-        /* scroll bar */
-        
-
-        body {
-  --sb-track-color: #ffffff;
-  --sb-thumb-color: #1d4ed8;
-  --sb-size: 11px;
-
-  scrollbar-color: var(--sb-thumb-color) 
-                   var(--sb-track-color);
+    .img {
+    position: relative;
+    width: 93%;
+    margin: auto;
+    height: 18vw;
+    background-image: url(/media/profile/header1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50px;
 }
 
-body::-webkit-scrollbar {
-  width: var(--sb-size) 
+.img:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
 }
 
-body::-webkit-scrollbar-track {
-  background: var(--sb-track-color);
-  border-radius: 9px;
+.text-white {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 800;
+    font-size: 3em; /* Adjust the font size as needed */
+}
+.text-white2    {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Noto Sans', sans-serif;
+    color: white;
+    font-weight: 800;
+    font-size: 1.5em; /* Adjust the font size as needed */
+}
+.container{
+    
+    width: 90%;
+    margin: auto;
+
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr ;
+}
+.box1 , .box{
+    position: relative;
+    margin-top: 20px;
+    width: 90%;
+    height: 165px;
+    background-image: url(/media/profile/tech.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
 }
 
-body::-webkit-scrollbar-thumb {
-  background: var(--sb-thumb-color);
-  border-radius: 9px;
+.tech{
+    grid-row: span 2;
+    height: 350px;
+}
+.edu{
+    background-image: url(/media/profile/edu.jpg);
+}
+.cook{
+    background-image: url(/media/profile/cook.jpg);
+}
+.life{
+    background-image: url(/media/profile/life.jpg);
+}
+.entru{
+    background-image: url(/media/profile/entru.jpg);
+}
+.box3{
+    grid-row: span 2;
+    height: 350px;
+    background-image: url(/media/profile/finance.jpg);
+
+}
+.headers{
+    margin-top: 40px;
+}
+.head{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 900;
+    font-size: 1.3em;
+    margin-left: 49px;
+    
+}
+.more:hover{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    cursor: pointer;
+}
+.title{
+    display: inline;
+    position: absolute;
+    padding: 8px;
+    top: 8px;
+    left: 8px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 900;
+    font-size: 1em;
+
+}
+
+
+/* card slider */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+.wrapper {
+  margin: auto;
+  width: 92%;
+  position: relative;
+}
+.wrapper i {
+  top: 50%;
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+  font-size: 1.20rem;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+.wrapper i:active{
+  transform: translateY(-50%) scale(0.85);
+}
+.wrapper i:first-child{
+  left: -36px;
+}
+.wrapper i:last-child{
+  right: -36px;
+}
+.wrapper .carousel{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% /4) - 12px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel.no-transition {
+  scroll-behavior: auto;
+}
+.carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+
+.carousel .card {
+  scroll-snap-align: start;
+  list-style: none;
+
+  cursor: pointer;
   
+  flex-direction: column;
+
+}
+
+
+
+
+@media screen and (max-width: 900px) {
+  .wrapper .carousel {
+    grid-auto-columns: calc((100% / 2) - 9px);
   }
+}
+@media screen and (max-width: 600px) {
+  .wrapper .carousel {
+    grid-auto-columns: 100%;
+  }
+}
+
     </style>
-    
 </head>
-
 <body>
-    <div class="px-4 mx-auto max-w-7xl sm:px-6">
-        <div class="relative pt-6 pb-16 sm:pb-24">
-            <nav class="relative flex items-center justify-between sm:h-10 md:justify-center" aria-label="Global">
-                <div class="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
-                    <div class="flex items-center justify-between w-full md:w-auto">
-                        <a href="#"><span class="sr-only">Company Name</span>
-                            <img class="w-auto h-8 sm:h-10" src="https://www.svgrepo.com/show/448244/pack.svg"
-                                loading="lazy" width="202" height="40">
-                        </a>
-                        <div class="flex items-center -mr-2 md:hidden">
-                            <button
-                                class="inline-flex items-center justify-center p-2 text-gray-400 bg-gray-50 rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-50"
-                                type="button" aria-expanded="false">
-                                <span class="sr-only">Open main menu</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                                    stroke="currentColor" aria-hidden="true" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16">
-                                    </path>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="hidden md:flex md:space-x-10 list-none">
-                    <li>
-                        <a href="#" class="text-base font-normal text-gray-500 list-none hover:text-gray-900"
-                            target="">Home</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'blog-myblogs' %}"
-                            class="text-base font-normal text-gray-500 list-none hover:text-gray-900" target="">Blogs
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-base font-normal text-gray-500 list-none hover:text-gray-900"
-                            target="_blank">About Us
-                        </a>
-                    </li>
-                </div>
+    {% include "blog/navbar.html" %}
+  
+    <div class="img mt-4">
+        <h1 class="text-white">Discover the Latest Blogs</h1> 
+        <h1 class="text-white2">Explore a World of Knowledge</h1> 
 
-                <div class=" hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
-                    <div class="inline-flex rounded-full shadow mt-4 ">
-                        <div href=""
-                            class=" inline-flex items-center px-4 py-2 text-base text-white bg-blue-500  hover:text-gray-800 border border-transparent rounded-full cursor-pointer font-base hover:bg-gray-50 ">
-                            {% if user.is_authenticated %}
-                            <a href="{% url 'profile'  %}" >
-                                <img src="{% static 'imgs/boy.png' %}" alt="" width="40">
-                                Profile
-                            </a>
-                            {% else %}
-                            <a href="{% url 'login' %}">Login</a>
-                            {% endif %}
+    </div>
+  
+    <div class="headers  w-[93%]">
+        <div class="float-left">
+            <h2 class="head ">Popular Categories</h2>
 
-                        </div>
+        </div>
+        <div class="float-right">
+            <h2 class="head more">See all</h2>
 
-                    </div>
-                    {% if user.is_authenticated %}
-                    <div
-                        class="ml-4 mt-4 inline-flex items-center px-6 py-6 text-base text-white bg-gray-800  hover:text-gray-900 border border-transparent rounded-full cursor-pointer font-base hover:bg-gray-50">
-                        
-                        <a href="{% url 'logout' %}">Logout</a>
-                        
-                    </div>
-                    {% endif %}
-                </div>
+        </div>
+        
+    </div>
+    <div class="container">
+        <div class="box tech" onclick="window.location.href=&quot;{% url 'blog-tech' %}&quot;" >
+            <h3 class="title">
+                Technology
+            </h3>
 
-            </nav>
+        </div>
+        <div class="box edu" onclick="window.location.href=&quot;{% url 'blog-education' %}&quot;">
+            <h3 class="title">
+                Education
+            </h3>
+
+        </div>
+        <div class="box box3" onclick="window.location.href=&quot;{% url 'blog-finance' %}&quot;">
+            <h3 class="title">
+                Finance
+            </h3>
+
+        </div>
+        <div class="box life" onclick="window.location.href=&quot;{% url 'blog-life' %}&quot;" >
+            <h3 class="title ">
+                Lifestyle
+            </h3>
+
+        </div>
+        <div class="box cook" onclick="window.location.href=&quot;{% url 'blog-cook' %}&quot;" >
+            <h3 class="title">
+                Food Cooking
+            </h3>
+
+        </div>
+        <div class="box entru" onclick="window.location.href=&quot;{% url 'blog-entru' %}&quot;" >
+            <h3 class="title">
+                Entrepreneurship
+            </h3>
+
+
         </div>
     </div>
+    <div class="headers  w-[93%]">
+        <div class="float-left">
+            <h2 class="head ">Featured Blogs</h2>
 
-    <h5 class="text-center text-[30px] font-bold text-gray-800">Blogs</h5>
-
-     <div class="ml-12 w-[4%] bg-gray-800 p-4 rounded-md shadow-md cursor-pointer" id="createPost">
-        <span class="text-blue-500 text-[30px]">+</span>
-    </div>
-
-    <!-- Modal div for the form (hidden by default) -->
-    <div class="bg-white w-[50%] m-auto mt-[5vw] p-6 rounded-lg shadow-md">
-        <!-- Close button -->
-        <button class="float-right text-gray-500 hover:text-gray-700" onclick="closeModal()">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-                </path>
-            </svg>
-        </button>
-
-            <!-- Form -->
-            <form method="post" class="w-[50%] p-[9px] ">
-                {% csrf_token %}
-                <label for="Title" style="font-size: 22px;">Title Of The Post:</label> <br>
-                {{form.title}}
-                <br>
-                <label for="Title" style="font-size: 22px;">Content Of The Post:</label> <br>
-                {{form.content}}
-                <br>
-                <label for="Title" style="font-size: 22px;">Select Category</label> <br>
-                {{form.category}}
-
-
-                <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded">Create Post</button>
-            </form>
         </div>
-    </div>
+        <div class="float-right">
+            <h2 class="head more">See all</h2>
 
-    <!-- This is an example component -->
-    <div class=" p-8  mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {% for post in posts %}
-            <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">
-                <a href="#">
-                    <img class="rounded-t-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="">
-                </a>
-                <div class="p-5">
-                    <a href="{% url 'blog-post' post.id%}">
-                        <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">{{ post.title }}</h5>
-                    </a>
-                    <p class="font-normal text-gray-700 mb-3">{{ post.content|slice:":5" }}{% if post.content|length > 5 %}...{% endif %}</p>
-                    <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" href="{% url 'blog-post' post.id%}">
-                        Read more
-                    </a>
+        </div>
+        
+    </div>
+    <div class="wrapper mt-[6rem]">
+        <i id="left" class="fa-solid fa-angle-left"></i>
+        <ul class="carousel">
+          <li class="">
+            <div class="bg-white rounded-lg border p-4 card">
+                <img src="https://placehold.co/300x500/d1d4ff/352cb5.png" alt="Placeholder Image" class="w-full h-48 rounded-md object-cover">
+                <div class="px-1 py-4">
+                  <div class="font-bold text-xl mb-2">Blog Title</div>
+                  <p class="text-gray-700 text-base">
+                    This is a simple blog card example using Tailwind CSS. You can replace this text with your own blog content.
+                  </p>
                 </div>
-            </div>
-        {% endfor %}
-    </div>
-    
-
-
-
+                <div class="px-1 py-4">
+                  <a href="#" class="text-blue-500 hover:underline">Read More</a>
+                </div>
+              </div>
+          </li>
+          <li class="">
+            <div class="bg-white rounded-lg border p-4 card">
+                <img src="https://placehold.co/300x500/d1d4ff/352cb5.png" alt="Placeholder Image" class="w-full h-48 rounded-md object-cover">
+                <div class="px-1 py-4">
+                  <div class="font-bold text-xl mb-2">Blog Title</div>
+                  <p class="text-gray-700 text-base">
+                    This is a simple blog card example using Tailwind CSS. You can replace this text with your own blog content.
+                  </p>
+                </div>
+                <div class="px-1 py-4">
+                  <a href="#" class="text-blue-500 hover:underline">Read More</a>
+                </div>
+              </div>
+          </li>
+          <li class="">
+            <div class="bg-white rounded-lg border p-4 card">
+                <img src="https://placehold.co/300x500/d1d4ff/352cb5.png" alt="Placeholder Image" class="w-full h-48 rounded-md object-cover">
+                <div class="px-1 py-4">
+                  <div class="font-bold text-xl mb-2">Blog Title</div>
+                  <p class="text-gray-700 text-base">
+                    This is a simple blog card example using Tailwind CSS. You can replace this text with your own blog content.
+                  </p>
+                </div>
+                <div class="px-1 py-4">
+                  <a href="#" class="text-blue-500 hover:underline">Read More</a>
+                </div>
+              </div>
+          </li>
+          <li class="">
+            <div class="bg-white rounded-lg border p-4 card">
+                <img src="https://placehold.co/300x500/d1d4ff/352cb5.png" alt="Placeholder Image" class="w-full h-48 rounded-md object-cover">
+                <div class="px-1 py-4">
+                  <div class="font-bold text-xl mb-2">Blog Title</div>
+                  <p class="text-gray-700 text-base">
+                    This is a simple blog card example using Tailwind CSS. You can replace this text with your own blog content.
+                  </p>
+                </div>
+                <div class="px-1 py-4">
+                  <a href="#" class="text-blue-500 hover:underline">Read More</a>
+                </div>
+              </div>
+          </li>
+          <li class="">
+            <div class="bg-white rounded-lg border p-4 card">
+                <img src="https://placehold.co/300x500/d1d4ff/352cb5.png" alt="Placeholder Image" class="w-full h-48 rounded-md object-cover">
+                <div class="px-1 py-4">
+                  <div class="font-bold text-xl mb-2">Blog Title</div>
+                  <p class="text-gray-700 text-base">
+                    This is a simple blog card example using Tailwind CSS. You can replace this text with your own blog content.
+                  </p>
+                </div>
+                <div class="px-1 py-4">
+                  <a href="#" class="text-blue-500 hover:underline">Read More</a>
+                </div>
+              </div>
+          </li>
+          <li class="">
+            <div class="bg-white rounded-lg border p-4 card">
+                <img src="https://placehold.co/300x500/d1d4ff/352cb5.png" alt="Placeholder Image" class="w-full h-48 rounded-md object-cover">
+                <div class="px-1 py-4">
+                  <div class="font-bold text-xl mb-2">Blog Title</div>
+                  <p class="text-gray-700 text-base">
+                    This is a simple blog card example using Tailwind CSS. You can replace this text with your own blog content.
+                  </p>
+                </div>
+                <div class="px-1 py-4">
+                  <a href="#" class="text-blue-500 hover:underline">Read More</a>
+                </div>
+              </div>
+          </li>
+          <li class="">
+            <div class="bg-white rounded-lg border p-4 card">
+                <img src="https://placehold.co/300x500/d1d4ff/352cb5.png" alt="Placeholder Image" class="w-full h-48 rounded-md object-cover">
+                <div class="px-1 py-4">
+                  <div class="font-bold text-xl mb-2">Blog Title</div>
+                  <p class="text-gray-700 text-base">
+                    This is a simple blog card example using Tailwind CSS. You can replace this text with your own blog content.
+                  </p>
+                </div>
+                <div class="px-1 py-4">
+                  <a href="#" class="text-blue-500 hover:underline">Read More</a>
+                </div>
+              </div>
+          </li>
+          
+        </ul>
+        <i id="right" class="fa-solid fa-angle-right"></i>
+      </div>
+     
 
 
 
 </body>
+
+<script>
+    const wrapper = document.querySelector(".wrapper");
+const carousel = document.querySelector(".carousel");
+const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+const arrowBtns = document.querySelectorAll(".wrapper i");
+const carouselChildrens = [...carousel.children];
+
+let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
+
+// Get the number of cards that can fit in the carousel at once
+let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+
+// Insert copies of the last few cards to beginning of carousel for infinite scrolling
+carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
+    carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+});
+
+// Insert copies of the first few cards to end of carousel for infinite scrolling
+carouselChildrens.slice(0, cardPerView).forEach(card => {
+    carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+});
+
+// Scroll the carousel at appropriate postition to hide first few duplicate cards on Firefox
+carousel.classList.add("no-transition");
+carousel.scrollLeft = carousel.offsetWidth;
+carousel.classList.remove("no-transition");
+
+// Add event listeners for the arrow buttons to scroll the carousel left and right
+arrowBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        carousel.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
+    });
+});
+
+const dragStart = (e) => {
+    isDragging = true;
+    carousel.classList.add("dragging");
+    // Records the initial cursor and scroll position of the carousel
+    startX = e.pageX;
+    startScrollLeft = carousel.scrollLeft;
+}
+
+const dragging = (e) => {
+    if(!isDragging) return; // if isDragging is false return from here
+    // Updates the scroll position of the carousel based on the cursor movement
+    carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+}
+
+const dragStop = () => {
+    isDragging = false;
+    carousel.classList.remove("dragging");
+}
+
+const infiniteScroll = () => {
+    // If the carousel is at the beginning, scroll to the end
+    if(carousel.scrollLeft === 0) {
+        carousel.classList.add("no-transition");
+        carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
+        carousel.classList.remove("no-transition");
+    }
+    // If the carousel is at the end, scroll to the beginning
+    else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
+        carousel.classList.add("no-transition");
+        carousel.scrollLeft = carousel.offsetWidth;
+        carousel.classList.remove("no-transition");
+    }
+
+    // Clear existing timeout & start autoplay if mouse is not hovering over carousel
+    clearTimeout(timeoutId);
+    if(!wrapper.matches(":hover")) autoPlay();
+}
+
+const autoPlay = () => {
+    if(window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
+    // Autoplay the carousel after every 2500 ms
+    timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
+}
+autoPlay();
+
+carousel.addEventListener("mousedown", dragStart);
+carousel.addEventListener("mousemove", dragging);
+document.addEventListener("mouseup", dragStop);
+carousel.addEventListener("scroll", infiniteScroll);
+wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+wrapper.addEventListener("mouseleave", autoPlay);
+  </script>
 <script src="http://cdn.tailwindcss.com"></script>
-  <script>
-        function openModal() {
-            // Hide the main container
-            document.getElementById('mainContainer').classList.add('hidden');
-            document.getElementById('postModal').classList.remove('hidden');
-        }
-
-        function closeModal() {
-            // Show the main container when closing the modal
-            document.getElementById('mainContainer').classList.remove('hidden');
-            document.getElementById('postModal').classList.add('hidden');
-        }
-
-        // Add click event listener to the plus icon
-        document.getElementById('createPost').addEventListener('click', openModal);
-    </script>
-
 </html>

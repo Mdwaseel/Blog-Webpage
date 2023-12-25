@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Category</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .container{
+    
+    width: 90%;
+    margin: auto;
+
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+}
+.box1 , .box{
+    position: relative;
+    margin-top: 20px; 
+    width: 90%;
+    height: 165px;
+    background-image: url(/media/profile/tech.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+.edu{
+    background-image: url(/media/profile/edu.jpg);
+}
+.cook{
+    background-image: url(/media/profile/cook.jpg);
+}
+.life{
+    background-image: url(/media/profile/life.jpg);
+}
+.entru{
+    background-image: url(/media/profile/entru.jpg);
+}
+.box3{
+    
+    background-image: url(/media/profile/finance.jpg);
+
+}
+
+.head{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 900;
+    font-size: 2.0em;
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+.more:hover{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    cursor: pointer;
+}
+.title{
+    display: inline;
+    position: absolute;
+    padding: 8px;
+    top: 8px;
+    left: 8px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 900;
+    font-size: 1em;
+
+}
+.art{
+    background-image: url(/media/profile/art.jpg);
+}
+.science{
+    background-image: url(/media/profile/science.jpg);
+}
+.par{
+    background-image: url(/media/profile/parenting.jpg);
+}
+.book{
+    background-image: url(/media/profile/reviews.jpg);
+}
+    </style>
+</head>
+<body>
+    {% include "blog/navbar.html" %}
+
+    <div class="headers  ">
+        <div class="" >
+            <h2 class="head ">Select Your Category</h2>
+
+        </div>
+        
+    </div>
+    <div class="container">
+        <div class="box tech" onclick="window.location.href=&quot;{% url 'blog-tech' %}&quot;">
+            <h3 class="title">
+                Technology
+            </h3>
+        </div>
+        <div class="box edu" onclick="window.location.href=&quot;{% url 'blog-education' %}&quot;" >
+            <h3 class="title">
+                Education
+            </h3>
+
+        </div>
+        <div class="box box3" onclick="window.location.href=&quot;{% url 'blog-finance' %}&quot;" >
+            <h3 class="title">
+                Finance
+            </h3>
+
+        </div>
+        <div class="box life" onclick="window.location.href=&quot;{% url 'blog-life' %}&quot;" >
+            <h3 class="title ">
+                Lifestyle
+            </h3>
+
+        </div>
+        <div class="box cook" onclick="window.location.href=&quot;{% url 'blog-cook' %}&quot;" >
+            <h3 class="title">
+                Food Cooking
+            </h3>
+
+        </div>
+        <div class="box entru" onclick="window.location.href=&quot;{% url 'blog-entru' %}&quot;" >
+            <h3 class="title">
+                Entrepreneurship
+            </h3>
+
+
+        </div>
+        <div class="box book" onclick="window.location.href=&quot;{% url 'blog-reviews' %}&quot;" >
+            <h3 class="title">
+                Movies
+            </h3>
+
+
+        </div>
+        <div class="box par" onclick="window.location.href=&quot;{% url 'blog-parenting' %}&quot;" >
+            <h3 class="title">
+                Parenting
+            </h3>
+
+
+        </div>
+        <div class="box science" onclick="window.location.href=&quot;{% url 'blog-science' %}&quot;" >
+            <h3 class="title">
+                Science 
+            </h3>
+
+
+        </div>
+        <div class="box art" onclick="window.location.href=&quot;{% url 'blog-art' %}&quot;" >
+            <h3 class="title">
+                Art Creativity
+            </h3>
+
+
+        </div>
+    </div>
+</body>
+</html>

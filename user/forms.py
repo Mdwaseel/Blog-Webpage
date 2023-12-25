@@ -5,10 +5,10 @@ from .models import ProfileModel
 
 
 class SignUpForm(UserCreationForm):
-    username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Enter Your Username', 'style': 'font-size: 16px; font-weight: 500;  color: black; margin-bottom:12px; border-radius:4px;padding:4px;'}))
-    password1 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Enter Your Password', 'style': 'font-size: 16px; font-weight: 500;  color: black;margin-bottom:12px;border-radius:4px;padding:4px;'}))
-    password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Your Password', 'style': 'font-size: 16px; font-weight: 500; color: black;margin-bottom:12px;border-radius:4px;padding:4px;'}))
-
+    username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Enter Your Username', 'style': 'font-size: 16px; font-weight: 500;  color: black; margin-bottom:12px; border-radius:4px;padding:4px;border:2px solid black;'}))
+    password1 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Enter Your Password', 'style': 'font-size: 16px; font-weight: 500;  color: black;margin-bottom:12px;border-radius:4px;padding:4px;border:2px solid black;'}))
+    password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Your Password', 'style': 'font-size: 16px; font-weight: 500; color: black;margin-bottom:12px;border-radius:4px;padding:4px;border:2px solid black;'}))
+    
     class Meta:
         model = User
         fields = ['username', 'password1', 'password2']
